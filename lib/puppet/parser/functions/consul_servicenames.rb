@@ -7,7 +7,7 @@ Parse consul server output and generate array of services suppied by node
     data = args[0]
 
     members = []
-    if data.is_a?(Array)
+    if data.is_a?(Hash)
       data['Services'].each { |service| 
         members << "#{service[1]['Service']}"
       }
